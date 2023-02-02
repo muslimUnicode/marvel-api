@@ -8,6 +8,7 @@ const Characters = () => {
     const dispatch = useDispatch()
     const characters = useSelector((state) => state.characters)
     const randomCharacter = useSelector((state) => state.randomCharacter)
+    const selectedCharacter = useSelector((state) => state.selectedCharacter)
 
     const getCharacters = async () => {
         const res = await fetch(`http://gateway.marvel.com/v1/public/characters?ts=1&apikey=03891c9ea8eb59750631df56a7174cff&hash=c6449aa86f89f33c8908bc7e2be24ca9&limit=99`)
@@ -25,6 +26,13 @@ const Characters = () => {
         })
     }
 
+    const selectCharacter = (id) => {
+        dispatch({
+            type: "select-character",
+            payload: id
+        })
+    }
+
     const [count, setCount] = useState(9)
 
     useEffect(() => {
@@ -35,7 +43,7 @@ const Characters = () => {
         <div className="characters">
             <div className="random-character">
                 <div className="left-side">
-                    {randomCharacter.length !== 0 &&
+                    {randomCharacter.name  &&
                     <div className="random-inner">
                         <img src={`${randomCharacter.thumbnail?.path}.${randomCharacter.thumbnail?.extension}`} alt=""/>
                         <div className="left-side-content">
@@ -59,9 +67,9 @@ const Characters = () => {
             <div className="main">
                 <div className="main-left">
                     <div className="characters-list">
-                        {characters.slice(0, count).map(item => {
+                        {characters.slice(0, count).map((item, index) => {
                             return(
-                                <div className="characters-item" key={item.id}>
+                                <div className="characters-item" key={item.id} onClick={() => selectCharacter(index)}>
                                     <img src={`${item.thumbnail?.path}.${item.thumbnail?.extension}`} alt=""/>
                                     <div className="characters-name">{item.name}</div>
                                 </div>
@@ -71,6 +79,21 @@ const Characters = () => {
                 <div className="comics-load-more" onClick={() => setCount(count + 9)}>LOAD MORE</div>
                 </div>
                 <div className="main-right">
+                    {selectedCharacter.name &&
+                    <div className="selected-character">
+                        <div className="selected-upper">
+                            <div className="selected-img"><img src={`${selectedCharacter.thumbnail?.path}.${selectedCharacter.thumbnail?.extension}`} alt=""/></div>
+                            <div className="name-and-buttons">
+                                <div className="selected-name">{selectedCharacter.name}</div>
+                                <div className="selected-buttons">
+                                    <div className="selected-homepage">HOMEPAGE</div>
+                                    <div className="selected-wiki">WIKI</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="selected-description">{selectedCharacter.description}</div>
+                    </div>
+                    }
                 </div>
             </div>
             <img src={absoluteBottomImg} alt="" className="absolute-bottom-img"/>

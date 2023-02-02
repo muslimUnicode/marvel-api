@@ -1,7 +1,8 @@
 const initialState = {
     characters: [],
     comics: [],
-    randomCharacter: [{}],
+    randomCharacter: {},
+    selectedCharacter: {},
 }
 
 export const reducer = (state = initialState, action) => {
@@ -10,17 +11,24 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 characters: action.payload,
-                randomCharacter: action.payload[9]
+                randomCharacter: action.payload[9],
+                selectedCharacter: action.payload[9]
             }
         case "get-comics":
             return{
                 ...state,
-                comics: action.payload,
+                comics: action.payload
             }
         case "get-random-character":
+            const num = Math.ceil(Math.random(0, 98) * 100)
             return({
                 ...state,
-                randomCharacter: state.characters[Math.floor(Math.random(0, 99) * 100)]
+                randomCharacter: state.characters[num]
+            })
+        case "select-character":
+            return({
+                ...state,
+                selectedCharacter: state.characters[action.payload]
             })
         default:
             return state

@@ -94,6 +94,8 @@
     line-height: 26px;
     color: white;
     margin-bottom: 30px;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.25));
+    cursor: pointer;
 }
 
 .characters-item:hover {
@@ -173,4 +175,64 @@
 
 .left-side-content {
     width: 55%;
+}
+
+.selected-upper {
+    display: flex;
+}
+
+.name-and-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 25px;
+}
+
+.selected-name {
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 40px;
+}
+
+.selected-homepage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 101px;
+    height: 41px;
+    color: white;
+    background: #9F0013;
+    cursor: pointer;
+    font-family: 'Roboto Condensed';
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 11px;
+}
+
+.selected-wiki {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 101px;
+    height: 41px;
+    color: white;
+    background: #5c5c5c;
+    cursor: pointer;
+    font-family: 'Roboto Condensed';
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.selected-img img {
+    max-width: 150px;
+    height: 100%;
+}
+
+.selected-description {
+    font-family: 'Roboto Condensed';
+    font-size: 14px;
+    line-height: 16px;
+    margin-top: 17px;
 }
