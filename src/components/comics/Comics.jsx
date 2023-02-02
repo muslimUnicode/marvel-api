@@ -3,13 +3,20 @@ import comicsLeftImg from "../../assets/new-comics-block-left.png"
 import comicsRightImg from "../../assets/new-comics-block-right.png"
 import comicsImg from "../../assets/comics-img.png"
 import { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
 const Comics = () => {
-    const [comics, setComics] = useState([])
+    const dispatch = useDispatch()
+    const comics = useSelector((state) => state.comics)
+
     const getComics = async () => {
-        let response = await fetch(`http://gateway.marvel.com/v1/public/comics?ts=1&apikey=03891c9ea8eb59750631df56a7174cff&hash=c6449aa86f89f33c8908bc7e2be24ca9&limit=100`)
-        let data = await response.json()
-        setComics(data.data.results)
+        const response = await fetch(`http://gateway.marvel.com/v1/public/comics?ts=1&apikey=03891c9ea8eb59750631df56a7174cff&hash=c6449aa86f89f33c8908bc7e2be24ca9&limit=100`)
+        const data = await response.json()
+        
+        dispatch({
+            type: "get-comics",
+            payload: data.data.results
+        })
     }
 
     const [count, setCount] = useState(8)

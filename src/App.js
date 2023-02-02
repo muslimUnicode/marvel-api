@@ -4,7 +4,7 @@ import Navbar from "./components/navbar/Navbar";
 import Characters from "./components/characters/Characters";
 import Comics from "./components/comics/Comics";
 
-function App() {
+function App() {    
     return(
         <div className="app">
             <Navbar/>
