@@ -1,0 +1,47 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.marvel {
+    color: #9F0013;
+    margin-right: 0.2em;
+}
+
+.portal-name {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 33px;
+}
+
+.active {
+    color: #9F0013;
+    margin-left: 0.2em;
+    text-decoration: none;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.inactive {
+    margin-left: 0.2em;
+    text-decoration: none;
+    color: black;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
+
+.splitter {
+    margin-left: 0.2em;
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+}
