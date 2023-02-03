@@ -236,3 +236,7 @@
     line-height: 16px;
     margin-top: 17px;
 }
+
+.characters .selected-wiki, .selected-homepage, .wiki, .homepage {
+    text-decoration: none;
+}

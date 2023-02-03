@@ -3,6 +3,7 @@ import tryItImg from "../../assets/try-it-img.png"
 import absoluteBottomImg from "../../assets/absolute-bottom.png"
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Characters = () => {
     const dispatch = useDispatch()
@@ -51,7 +52,7 @@ const Characters = () => {
                             <div className="text">{randomCharacter.description}</div>
                             <div className="buttons">
                                 <div className="homepage">HOMEPAGE</div>
-                                <div className="wiki">WIKI</div>
+                                <Link className="wiki" to={`/characters-wiki/${randomCharacter.id}`}>WIKI</Link>
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,7 @@ const Characters = () => {
                     <div className="first-word">Random character for today!<br/>Do you want to get to know him better?</div>
                     <div className="second-word">Or choose another one</div>
                     <div className="try-it" onClick={getRandomCharacter}>TRY IT</div>
-                    <div className="try-it-img"><img src={tryItImg} alt="" /></div>
+                    <div className="try-it-img"><img src={tryItImg} alt=""/></div>
                 </div>
             </div>
             <div className="main">
@@ -87,7 +88,7 @@ const Characters = () => {
                                 <div className="selected-name">{selectedCharacter.name}</div>
                                 <div className="selected-buttons">
                                     <div className="selected-homepage">HOMEPAGE</div>
-                                    <div className="selected-wiki">WIKI</div>
+                                    <Link className="selected-wiki" to={`/characters-wiki/${selectedCharacter.id}`}>WIKI</Link>
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,68 @@
+.comics-about .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.comics-about-img img {
+    width: 293px;
+    height: 450px;
+}
+
+.comics-about-main {
+    display: flex;
+}
+
+.comics-about-content {
+    width: 797px;
+    margin-left: 50px;
+}
+
+.comics-about-name {
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+}
+
+.back-to-all {
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration: none;
+    color: black;
+}
+
+.comics-about-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.about-comics-description {
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
+    line-height: 21px;
+    margin: 25px auto;
+}
+
+.about-comics-page-count {
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.about-comics-language {
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
+    line-height: 21px;
+    margin: 25px auto;
+}
+
+.about-comics-price {
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: #9F0013;
+}

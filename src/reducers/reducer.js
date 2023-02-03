@@ -11,8 +11,6 @@ export const reducer = (state = initialState, action) => {
             return{
                 ...state,
                 characters: action.payload,
-                randomCharacter: action.payload[9],
-                selectedCharacter: action.payload[9]
             }
         case "get-comics":
             return{
@@ -20,15 +18,19 @@ export const reducer = (state = initialState, action) => {
                 comics: action.payload
             }
         case "get-random-character":
-            const num = Math.ceil(Math.random(0, 98) * 100)
             return({
                 ...state,
-                randomCharacter: state.characters[num]
+                randomCharacter: state.characters[Math.floor(Math.random(0, 98) * 100)]
             })
         case "select-character":
             return({
                 ...state,
                 selectedCharacter: state.characters[action.payload]
+            })
+        case "set-character-wiki":
+            return({
+                ...state,
+                characterWiki: state.characters.filter(item => item.name === action.payload)[0]
             })
         default:
             return state

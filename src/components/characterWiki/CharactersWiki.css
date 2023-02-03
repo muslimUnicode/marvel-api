@@ -1,0 +1,33 @@
+.characters-wiki .main {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wiki-main {
+    display: flex;
+}
+
+.wiki-img img{
+    width: 293px;
+    height: 293px;
+}
+
+.wiki-content {
+    width: 550px;
+    margin-left: 50px;
+}
+
+.wiki-header {
+    font-family: 'Roboto Condensed';
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 25px;
+}
+
+.wiki-description {
+    font-family: 'Roboto Condensed';
+    font-size: 18px;
+    line-height: 21px;
+}

@@ -4,6 +4,7 @@ import comicsRightImg from "../../assets/new-comics-block-right.png"
 import comicsImg from "../../assets/comics-img.png"
 import { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 const Comics = () => {
     const dispatch = useDispatch()
@@ -41,11 +42,11 @@ const Comics = () => {
                         ? path = `${item.images[0].path}.${item.images[0].extension}`
                         : path = comicsImg
                     return(
-                        <div className="comics-item" key={item.id}>
+                        <Link className="comics-item" key={item.id} to={`/comics/comics-about/${item.id}`}>
                             <img src={path} alt=""/>
                             <div className="comics-name">{item.title}</div>
                             <div className="comics-price">{item.prices[0].price !== 0 ? `${item.prices[0].price}$` : "NOT AVAILABLE"}</div>
-                        </div>
+                        </Link>
                     )
                 })}
             </div>
