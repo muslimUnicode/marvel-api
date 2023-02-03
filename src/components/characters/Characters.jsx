@@ -51,7 +51,7 @@ const Characters = () => {
                             <div className="header">{randomCharacter.name}</div>
                             <div className="text">{randomCharacter.description}</div>
                             <div className="buttons">
-                                <div className="homepage">HOMEPAGE</div>
+                                <Link className="homepage" to={`${randomCharacter?.urls[0]?.url}`}>HOMEPAGE</Link>
                                 <Link className="wiki" to={`/characters-wiki/${randomCharacter.id}`}>WIKI</Link>
                             </div>
                         </div>
@@ -87,7 +87,7 @@ const Characters = () => {
                             <div className="name-and-buttons">
                                 <div className="selected-name">{selectedCharacter.name}</div>
                                 <div className="selected-buttons">
-                                    <div className="selected-homepage">HOMEPAGE</div>
+                                    <Link className="selected-homepage" to={`${selectedCharacter.urls[0]?.url}`}>HOMEPAGE</Link>
                                     <Link className="selected-wiki" to={`/characters-wiki/${selectedCharacter.id}`}>WIKI</Link>
                                 </div>
                             </div>
